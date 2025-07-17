@@ -124,6 +124,59 @@
     </div>
 
     <audio id="audioPlayer" controls style="display:none;"></audio>
+    <details style="margin-top: 30px;">
+  <summary style="font-weight: bold; font-size: 1.1rem; cursor: pointer;">
+    📚 Ejemplos de texto en varios idiomas (verificación de pronunciación)
+  </summary>
+  <div style="margin-top: 15px; line-height: 1.6;">
+
+    <div>
+      <p><strong>🇮🇹 Italiano:</strong><br>
+        <em id="example1">Giovanna d’Arco fu giustiziata a Rouen nel millequattrocentotrentuno.</em><br>
+        <small>(fecha escrita como una sola palabra, apóstrofes complicados, entonación precisa)</small><br>
+        <button onclick="enableText('example1')">✅ Activar como texto actual</button>
+      </p>
+
+      <p><strong>🇩🇪 Deutsch:</strong><br>
+        <em id="example2">Mata Hari wurde im Oktober neunzehnhundertsiebzehn in Vincennes hingerichtet.</em><br>
+        <small>(número compuesto largo, énfasis en “Vincennes” dentro de contexto francés)</small><br>
+        <button onclick="enableText('example2')">✅ Activar como texto actual</button>
+      </p>
+
+      <p><strong>🇬🇧 English:</strong><br>
+        <em id="example3">Virginia Hall operated behind enemy lines from nineteen forty-one to nineteen forty-four.</em><br>
+        <small>(verificación de fechas, ritmo y claridad con doble numeración)</small><br>
+        <button onclick="enableText('example3')">✅ Activar como texto actual</button>
+      </p>
+
+      <p><strong>🇺🇦 Українська:</strong><br>
+        <em id="example4">Софія Яблонська народилася у місті Галич у тисяча дев’ятсот п’ятому році.</em><br>
+        <small>(verificación de apóstrofe y consonantes suaves)</small><br>
+        <button onclick="enableText('example4')">✅ Activar como texto actual</button>
+      </p>
+
+      <p><strong>🇷🇺 Русский:</strong><br>
+        <em id="example5">Вера Оболенская была расстреляна в Берлине в тысяча девятьсот сорок четвертом году.</em><br>
+        <small>(verificación de pronunciación de “Берлине” y la entonación de la fecha)</small><br>
+        <button onclick="enableText('example5')">✅ Activar como texto actual</button>
+      </p>
+
+      <p><strong>🇫🇷 Français:</strong><br>
+        <em id="example6">Lucie Aubrac a libéré son mari le vingt-et-un octobre mille neuf cent quarante-trois.</em><br>
+        <small>(número compuesto en la fecha, enlace fonético y nasalización)</small><br>
+        <button onclick="enableText('example6')">✅ Activar como texto actual</button>
+      </p>
+
+      <p><strong>🇵🇹 Português:</strong><br>
+        <em id="example7">Maria José foi presa pela PIDE em mil novecentos e cinquenta e dois.</em><br>
+        <small>(ritmo y la pronunciación de “PIDE”, fecha con conjunciones)</small><br>
+        <button onclick="enableText('example7')">✅ Activar como texto actual</button>
+      </p>
+    </div>
+
+  </div>
+</details>
+
   </div>
 </div>
 
@@ -206,6 +259,13 @@ downloadBtn.addEventListener('click', async () => {
   link.download = filename;
   link.click();
 });
+
+function enableText(exampleId) {
+  const textarea = document.getElementById('textInput');
+  const phrase = document.getElementById(exampleId).innerText;
+  textarea.value = phrase;
+  textarea.focus();
+}
 </script>
 
 </body>
