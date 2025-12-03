@@ -1,289 +1,42 @@
 <!DOCTYPE html>
-<html lang="ru" class="scroll-smooth">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StreamHub 2025 | Premium Access</title>
-
-  <!-- Шрифты -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-
-  <!-- Наши стили -->
+  <title>StreamHub – Todo tu entretenimiento en un solo lugar</title>
   <link rel="stylesheet" href="styles.css">
-
-  <!-- Сначала наш JS (внутри него tailwind.config), потом Tailwind CDN -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <script defer src="main.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="antialiased overflow-x-hidden bg-dark text-white">
+<body class="min-h-screen bg-dark text-white flex flex-col">
 
-  <!-- NAVBAR -->
-  <nav id="main-nav" class="fixed w-full z-50 glass border-b border-white/5 transition-colors duration-300">
-    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="#hero" class="font-display font-bold text-xl tracking-tight text-white flex items-center gap-1">
-        <span>STREAM</span><span class="text-primary">HUB</span>
-      </a>
-
-      <div class="hidden md:flex space-x-8 text-sm text-gray-400">
-        <a href="#catalog" class="nav-link hover:text-white transition">Каталог</a>
-        <a href="#why-us" class="nav-link hover:text-white transition">Гарантии</a>
-        <a href="#faq" class="nav-link hover:text-white transition">FAQ</a>
-      </div>
-
-      <button class="bg-white/10 hover:bg-white/20 text-white px-5 py-2 rounded-full text-sm font-medium transition backdrop-blur-md border border-white/5">
-        Войти
-      </button>
+  <header class="py-8 px-6 md:px-10 flex justify-between items-center">
+    <div class="flex items-center gap-2 font-display text-2xl font-bold tracking-tight">
+      <span>STREAM</span><span class="text-primary">HUB</span>
     </div>
-  </nav>
+    <nav>
+      <a href="streamhub.html" class="inline-block bg-accent px-6 py-3 rounded-xl font-bold text-dark shadow-neon text-lg hover:scale-105 transition"
+        aria-label="Ir al Streaming Hub">Ir a Streaming Hub</a>
+    </nav>
+  </header>
 
-  <!-- HERO -->
-  <section id="hero" class="relative pt-32 pb-20 lg:pt-48 overflow-hidden">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none"></div>
-    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[100px] pointer-events-none"></div>
+  <main class="flex-1 flex flex-col justify-center items-center px-6 text-center">
+    <h1 class="font-display text-5xl sm:text-7xl font-bold mb-6 leading-tight drop-shadow-neon">
+      Todo el streaming.<br><span class="text-gradient">Sin límites.</span>
+    </h1>
+    <p class="text-xl md:text-2xl text-zinc-300 mb-10 max-w-xl">
+      Acceso premium instantáneo a Netflix, Spotify, Disney+ y más. Todo en un solo sitio. Fácil. Rápido. Seguro.
+    </p>
+    <a href="streamhub.html"
+      class="bg-primary hover:bg-indigo-600 text-white px-10 py-5 rounded-2xl font-semibold text-2xl shadow-[0_0_32px_0_rgba(92,77,255,0.20)] transition outline-none focus:ring-2 focus:ring-accent focus:ring-offset-[4px] focus:ring-offset-dark"
+      aria-label="Ver ofertas de streaming">
+      Descubre las ofertas
+    </a>
+  </main>
 
-    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
-      <div class="space-y-6">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-accent">
-          <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-          Работаем 24/7 • Мгновенная выдача
-        </div>
-
-        <h1 class="font-display text-5xl lg:text-7xl font-bold leading-tight">
-          Все стриминги<br>
-          <span class="text-gradient">в одном месте.</span>
-        </h1>
-
-        <p class="text-gray-400 text-lg max-w-md leading-relaxed">
-          Аккаунты Netflix, Spotify, HBO, Disney+ и 14+ сервисов. Активируются за 10 секунд. Гарантия 30 дней.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-4">
-          <button data-scroll-target="#pricing" class="cta-primary bg-primary hover:bg-indigo-600 text-white px-8 py-4 rounded-xl font-semibold shadow-neon transition transform hover:scale-105">
-            Купить сейчас
-          </button>
-          <button data-scroll-target="#pricing" class="cta-secondary bg-card border border-white/10 hover:bg-white/5 text-white px-8 py-4 rounded-xl font-medium transition">
-            Сравнить цены
-          </button>
-        </div>
-
-        <div class="mt-8 flex flex-wrap gap-8 border-t border-white/5 pt-8">
-          <div>
-            <div class="text-2xl font-display font-bold text-white" data-counter data-target="12000">0</div>
-            <div class="text-xs text-gray-500">Клиентов</div>
-          </div>
-          <div>
-            <div class="text-2xl font-display font-bold text-white">4.9</div>
-            <div class="text-xs text-gray-500">Рейтинг TrustPilot</div>
-          </div>
-          <div>
-            <div class="text-2xl font-display font-bold text-white">10s</div>
-            <div class="text-xs text-gray-500">Скорость выдачи</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Карточки сервисов -->
-      <div class="relative h-[500px] hidden lg:block">
-        <div class="absolute top-10 right-10 w-64 bg-[#141414] rounded-2xl p-6 border border-white/10 shadow-2xl floating z-20">
-          <div class="text-red-600 font-bold text-2xl mb-2">NETFLIX</div>
-          <div class="text-gray-400 text-sm mb-4">Premium Ultra HD</div>
-          <div class="flex justify-between items-center">
-            <span class="text-white font-bold">3.99€</span>
-            <div class="w-8 h-8 rounded-full bg-red-600/20 flex items-center justify-center text-red-500">✓</div>
-          </div>
-        </div>
-
-        <div class="absolute top-40 right-40 w-64 bg-[#121212] rounded-2xl p-6 border border-white/10 shadow-2xl floating-delay z-10 blur-[1px] opacity-80">
-          <div class="text-green-500 font-bold text-2xl mb-2">Spotify</div>
-          <div class="text-gray-400 text-sm mb-4">Individual Premium</div>
-          <div class="flex justify-between items-center">
-            <span class="text-white font-bold">1.99€</span>
-            <div class="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center text-green-500">✓</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURES -->
-  <section id="catalog" class="py-20 bg-card/50">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid md:grid-cols-4 gap-8">
-        <div class="feature-card p-6 rounded-2xl bg-white/5 border border-white/5">
-          <div class="feature-icon bg-primary/20 text-primary">⚡</div>
-          <h3 class="text-lg font-bold text-white mb-2">10 сек активация</h3>
-          <p class="text-sm text-gray-400">Прямо в личном кабинете. Без VPN и сложных настроек.</p>
-        </div>
-
-        <div class="feature-card p-6 rounded-2xl bg-white/5 border border-white/5">
-          <div class="feature-icon bg-green-500/20 text-green-400">📉</div>
-          <h3 class="text-lg font-bold text-white mb-2">На 70% дешевле</h3>
-          <p class="text-sm text-gray-400">Цены ниже официальных. Никаких скрытых платежей.</p>
-        </div>
-
-        <div class="feature-card p-6 rounded-2xl bg-white/5 border border-white/5">
-          <div class="feature-icon bg-blue-500/20 text-blue-400">🛡</div>
-          <h3 class="text-lg font-bold text-white mb-2">Гарантия 30 дней</h3>
-          <p class="text-sm text-gray-400">Если аккаунт перестанет работать — заменим мгновенно.</p>
-        </div>
-
-        <div class="feature-card p-6 rounded-2xl bg-white/5 border border-white/5">
-          <div class="feature-icon bg-purple-500/20 text-purple-400">🔒</div>
-          <h3 class="text-lg font-bold text-white mb-2">100% Анонимно</h3>
-          <p class="text-sm text-gray-400">Не храним ваши данные карт. Только email для доставки.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section id="pricing" class="py-24">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="font-display text-3xl md:text-4xl font-bold mb-12 text-center">Выберите подписку</h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Netflix -->
-        <article class="plan group card-hover glass rounded-3xl p-8 relative overflow-hidden" data-plan="Netflix">
-          <div class="plan-glow bg-red-600/10"></div>
-          <div class="relative z-10">
-            <div class="flex justify-between items-start mb-8">
-              <span class="text-2xl font-bold text-white">Netflix</span>
-              <span class="px-3 py-1 bg-red-500/10 text-red-500 text-xs font-bold rounded-full border border-red-500/20">4K UHD</span>
-            </div>
-            <div class="mb-8">
-              <span class="text-4xl font-display font-bold text-white plan-price" data-price="3.99">3.99€</span>
-              <span class="text-gray-500">/мес</span>
-            </div>
-            <ul class="space-y-3 mb-8 text-sm text-gray-400">
-              <li class="flex items-center gap-2"><span class="text-red-500">✓</span> Работает без VPN</li>
-              <li class="flex items-center gap-2"><span class="text-red-500">✓</span> Свой профиль с PIN</li>
-              <li class="flex items-center gap-2"><span class="text-red-500">✓</span> Гарантия весь срок</li>
-            </ul>
-            <button class="plan-btn w-full py-4 bg-white text-black font-bold rounded-xl hover:bg-gray-200 transition">Активировать</button>
-          </div>
-        </article>
-
-        <!-- Spotify -->
-        <article class="plan group card-hover glass rounded-3xl p-8 relative overflow-hidden" data-plan="Spotify">
-          <div class="plan-glow bg-green-500/10"></div>
-          <div class="relative z-10">
-            <div class="flex justify-between items-start mb-8">
-              <span class="text-2xl font-bold text-white">Spotify</span>
-              <span class="px-3 py-1 bg-green-500/10 text-green-500 text-xs font-bold rounded-full border border-green-500/20">INDIVIDUAL</span>
-            </div>
-            <div class="mb-8">
-              <span class="text-4xl font-display font-bold text-white plan-price" data-price="1.99">1.99€</span>
-              <span class="text-gray-500">/мес</span>
-            </div>
-            <ul class="space-y-3 mb-8 text-sm text-gray-400">
-              <li class="flex items-center gap-2"><span class="text-green-500">✓</span> На ваш старый аккаунт</li>
-              <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Без рекламы</li>
-              <li class="flex items-center gap-2"><span class="text-green-500">✓</span> High Quality Audio</li>
-            </ul>
-            <button class="plan-btn w-full py-4 bg-white text-black font-bold rounded-xl hover:bg-gray-200 transition">Активировать</button>
-          </div>
-        </article>
-
-        <!-- YouTube -->
-        <article class="plan group card-hover glass rounded-3xl p-8 relative overflow-hidden" data-plan="YouTube">
-          <div class="plan-glow bg-white/10"></div>
-          <div class="relative z-10">
-            <div class="flex justify-between items-start mb-8">
-              <span class="text-2xl font-bold text-white">YouTube</span>
-              <span class="px-3 py-1 bg-white/10 text-white text-xs font-bold rounded-full border border-white/20">PREMIUM</span>
-            </div>
-            <div class="mb-8">
-              <span class="text-4xl font-display font-bold text-white plan-price" data-price="4.49">4.49€</span>
-              <span class="text-gray-500">/мес</span>
-            </div>
-            <ul class="space-y-3 mb-8 text-sm text-gray-400">
-              <li class="flex items-center gap-2"><span class="text-white">✓</span> YouTube Music вкл.</li>
-              <li class="flex items-center gap-2"><span class="text-white">✓</span> Работает в фоне</li>
-              <li class="flex items-center gap-2"><span class="text-white">✓</span> Семейная подписка</li>
-            </ul>
-            <button class="plan-btn w-full py-4 bg-white text-black font-bold rounded-xl hover:bg-gray-200 transition">Активировать</button>
-          </div>
-        </article>
-      </div>
-
-      <!-- Итоговая экономия -->
-      <p id="savings" class="text-center text-gray-500 text-sm mt-8">
-        Экономия в год: <span class="font-semibold text-white">≈ 0 €</span>
-      </p>
-    </div>
-  </section>
-
-  <!-- WHY US -->
-  <section id="why-us" class="py-20 bg-card">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="font-display text-3xl font-bold mb-8 text-center">Почему выбирают нас?</h2>
-      <div class="overflow-hidden rounded-2xl border border-white/10">
-        <table class="w-full text-left border-collapse">
-          <thead>
-            <tr class="bg-white/5 border-b border-white/10">
-              <th class="p-4 text-gray-400 font-normal">Сервис</th>
-              <th class="p-4 text-gray-400 font-normal">Официальная цена</th>
-              <th class="p-4 text-primary font-bold">Наша цена</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-white/5">
-            <tr class="hover:bg-white/5 transition">
-              <td class="p-4 font-medium">Netflix 4K</td>
-              <td class="p-4 text-gray-500 line-through">17.99 €</td>
-              <td class="p-4 text-white font-bold text-lg">3.99 €</td>
-            </tr>
-            <tr class="hover:bg-white/5 transition">
-              <td class="p-4 font-medium">Spotify Prem</td>
-              <td class="p-4 text-gray-500 line-through">9.99 €</td>
-              <td class="p-4 text-white font-bold text-lg">1.99 €</td>
-            </tr>
-            <tr class="hover:bg-white/5 transition">
-              <td class="p-4 font-medium">YouTube Prem</td>
-              <td class="p-4 text-gray-500 line-through">11.99 €</td>
-              <td class="p-4 text-white font-bold text-lg">4.49 €</td>
-            </tr>
-            <tr class="hover:bg-white/5 transition">
-              <td class="p-4 font-medium">Disney+</td>
-              <td class="p-4 text-gray-500 line-through">8.99 €</td>
-              <td class="p-4 text-white font-bold text-lg">2.99 €</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="text-center text-gray-500 text-sm mt-6">
-        Экономия до 180 € в год на одной подписке.
-      </p>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section id="faq" class="py-24 relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent pointer-events-none"></div>
-    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-      <h2 class="font-display text-4xl md:text-5xl font-bold mb-6">
-        Начни пользоваться премиумом<br>
-        уже через <span class="text-accent">10 секунд</span>
-      </h2>
-      <p class="text-xl text-gray-300 mb-10">
-        Ты платишь меньше → получаешь больше.
-      </p>
-      <button data-scroll-target="#pricing" class="bg-white text-black px-10 py-5 rounded-full font-bold text-lg hover:bg-gray-100 hover:scale-105 transition shadow-[0_0_30px_rgba(255,255,255,0.3)]">
-        Начать пользоваться →
-      </button>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="border-t border-white/10 py-12 bg-black">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-      <div class="text-gray-500 text-sm">© 2025 StreamHub. All rights reserved.</div>
-      <div class="flex gap-6 opacity-70">
-        <div class="w-8 h-5 bg-gray-700 rounded"></div>
-        <div class="w-8 h-5 bg-gray-700 rounded"></div>
-        <div class="w-8 h-5 bg-gray-700 rounded"></div>
-      </div>
-    </div>
+  <footer class="py-8 border-t border-white/10 text-center text-zinc-400 text-sm mt-12 bg-black bg-opacity-60">
+    © 2025 StreamHub. Todos los derechos reservados.
   </footer>
-
 </body>
 </html>
