@@ -171,6 +171,12 @@ a:hover {
   gap: 12px;
 }
 
+.avatar-circle {
+  width: 160px;      /* подгони под макет */
+  height: 160px;
+  display: block;
+}
+
 .photo-frame {
   border-radius: var(--radius-lg);
   overflow: hidden;
